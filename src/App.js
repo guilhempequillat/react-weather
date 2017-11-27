@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import './Style.css';
+import { Label, DropdownButton, MenuItem, Form } from 'react-bootstrap';
 
 class App extends Component {
   render() {
@@ -41,7 +42,7 @@ class Body extends Component{
     render(){
         return (
             <div id = 'body'>
-                    <div id='body-center'>
+                    <div   bsClass="col-sm-3 text-left">
                        
                         <h2>Paris</h2>
                         <Parallax
@@ -121,17 +122,23 @@ class Section extends Component{
     }
     render(){
         return (
+            
                 this.state.list.map((item, i) => (
-                <div key = {i} className="day">
+                <div key = {i} className="day" bsClass="col-md-2">
                     <h3>{this.state.date[i]}</h3><br/>
-                    <span>Temp min : {item.temp.min}</span><br/>
-                    <span>Temp max : {item.temp.max}</span><br/>
-                    <span>Pression  : {item.pressure}</span><br/>
-                        <WeatherIcone description={item.weather[0].description}/>
+                        <div className="icone-text">
+                        <div>
+                            <span>Temp min : {item.temp.min}</span><br/>
+                            <span>Temp max : {item.temp.max}</span><br/>
+                            <span>Pression  : {item.pressure}</span><br/>
+                        </div>
+                        <WeatherIcone description={item.weather[0].description}/><br/>
+                    </div>
                     <span className="description">{item.weather[0].description}</span><br/>
                 </div>
                 )            
             )
+            
         );
     }
 }

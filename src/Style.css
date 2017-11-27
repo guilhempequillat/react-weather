@@ -28,7 +28,7 @@
     text-align-last: left;
     margin-left: 25%;
     margin-bottom:  10px;
-    background-color: rgba(200,200,200,0.7);
+    background-color: rgba(150,150,150,0.7);
     width : 50%;
     padding: 10px;
     border-radius: 5px;
@@ -51,15 +51,25 @@ h2{
     background-image: url("./images/rain.png");
     background-size: cover;
     background-repeat: no-repeat;
-    align-content: center;
+    position : relative;
+    
+    margin:10px;
+    margin-left : 30%;
     height: 100px;
     width:100px;
+    margin-right: 20px;
 }
 .light-rain-icone{
     background-image: url("./images/light-rain.png");
     background-size: cover;
     background-repeat: no-repeat;
     align-content: center;
+    position : relative;
+    margin-left : 30%;
     height: 100px;
     width:100px;
+}
+.icone-text{
+    display: flex;
+    flex-direction: row;
 }
