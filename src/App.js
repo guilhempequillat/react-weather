@@ -75,6 +75,23 @@ class Button extends Component{
     }
 }
 
+class WeatherIcone extends Component{
+    constructor(props){
+        super(props);
+        this.state = {icone:"null"};
+        if(this.props.description === "moderate rain"){
+            this.state = {icone:"rain-icone"};
+        }else if(this.props.description == "light rain"){
+            this.state = {icone:"light-rain-icone"};
+        }
+    }
+    render(){
+        return (
+            <div className={this.state.icone}>
+            </div>
+        );
+    }
+}
 
 class Section extends Component{
     constructor(props){
@@ -92,6 +109,7 @@ class Section extends Component{
         }
         console.log(this.state);
     }
+    
     componentDidMount (){
       fetch('https://samples.openweathermap.org/data/2.5/forecast/daily?id=6455259&appid=b1b15e88fa797225412429c1c50c122a1')
          .then((response) => response.json())
@@ -109,6 +127,7 @@ class Section extends Component{
                     <span>Temp min : {item.temp.min}</span><br/>
                     <span>Temp max : {item.temp.max}</span><br/>
                     <span>Pression  : {item.pressure}</span><br/>
+                        <WeatherIcone description={item.weather[0].description}/>
                     <span className="description">{item.weather[0].description}</span><br/>
                 </div>
                 )            

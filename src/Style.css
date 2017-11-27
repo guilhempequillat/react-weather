@@ -47,3 +47,19 @@ h2{
     align-content: center;
     height: 500px;
 }
+.rain-icone{
+    background-image: url("./images/rain.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    height: 100px;
+    width:100px;
+}
+.light-rain-icone{
+    background-image: url("./images/light-rain.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-content: center;
+    height: 100px;
+    width:100px;
+}
